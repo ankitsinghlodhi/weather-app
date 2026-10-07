@@ -1,0 +1,1155 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #f8fafc;
+  background: #070b14;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+}
+
+/* ================================
+   APP
+================================ */
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(59, 130, 246, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(14, 165, 233, 0.08),
+      transparent 30%
+    ),
+    #070b14;
+}
+
+.background-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.glow-one {
+  top: -200px;
+  left: -150px;
+  background: rgba(37, 99, 235, 0.14);
+}
+
+.glow-two {
+  right: -200px;
+  bottom: -200px;
+  background: rgba(14, 165, 233, 0.1);
+}
+
+/* ================================
+   DASHBOARD
+================================ */
+
+.weather-dashboard {
+  width: min(1100px, calc(100% - 40px));
+  margin: auto;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  padding: 32px 0 40px;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #06b6d4
+  );
+  box-shadow:
+    0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-wrapper {
+  width: min(420px, 100%);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(20px);
+  transition: border 0.2s ease;
+}
+
+.search-wrapper:focus-within {
+  border-color: rgba(96, 165, 250, 0.55);
+}
+
+.search-icon {
+  color: #64748b;
+  font-size: 22px;
+  padding-left: 13px;
+}
+
+.search-wrapper input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.search-wrapper input::placeholder {
+  color: #64748b;
+}
+
+.search-button {
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  background: #2563eb;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.search-button:hover {
+  background: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   ERROR
+================================ */
+
+.error-message {
+  margin-top: 25px;
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  font-size: 14px;
+}
+
+/* ================================
+   WELCOME
+================================ */
+
+/* =========================================
+   LANDING PAGE
+========================================= */
+
+.landing {
+  min-height: calc(100vh - 115px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px 0 90px;
+}
+
+/* =========================================
+   ATMOSPHERE
+========================================= */
+
+.landing-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.08);
+  filter: blur(80px);
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 100px;
+  background: rgba(148, 163, 184, 0.055);
+  filter: blur(1px);
+}
+
+.cloud-one {
+  width: 280px;
+  height: 80px;
+  top: 17%;
+  left: 14%;
+  transform: rotate(-8deg);
+}
+
+.cloud-two {
+  width: 360px;
+  height: 100px;
+  top: 30%;
+  right: 8%;
+  transform: rotate(7deg);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.landing-content {
+  position: relative;
+  z-index: 3;
+  width: min(700px, 100%);
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.055);
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  margin-bottom: 24px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+.landing-content h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(64px, 9vw, 112px);
+  line-height: 0.9;
+  letter-spacing: -6px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.landing-content h1 span {
+  color: #64748b;
+}
+
+.landing-description {
+  width: min(500px, 100%);
+  margin: 28px auto 35px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   HERO SEARCH
+========================================= */
+
+.hero-search {
+  width: min(600px, 100%);
+  height: 68px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(30px);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-search:focus-within {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(37, 99, 235, 0.08);
+}
+
+.hero-search-icon {
+  color: #64748b;
+  font-size: 25px;
+  margin-left: 18px;
+}
+
+.hero-search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f8fafc;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.hero-search input::placeholder {
+  color: #64748b;
+}
+
+.hero-search button {
+  height: 54px;
+  padding: 0 23px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  background: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-search button:hover {
+  background: #3b82f6;
+  transform: translateX(2px);
+}
+
+.hero-search button span {
+  font-size: 18px;
+}
+
+.location-option {
+  margin-top: 17px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.location-option span {
+  color: #60a5fa;
+  margin-right: 6px;
+}
+
+/* =========================================
+   POPULAR CITIES
+========================================= */
+
+.landing-cities {
+  position: absolute;
+  bottom: 145px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  z-index: 3;
+}
+
+.landing-cities > span {
+  color: #334155;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-right: 5px;
+}
+
+.landing-cities button {
+  padding: 8px 13px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 11px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.landing-cities button:hover {
+  color: #cbd5e1;
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.18);
+}
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.landing-features {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  z-index: 3;
+}
+
+.landing-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 145px;
+}
+
+.landing-feature > span {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 700;
+  padding-top: 3px;
+}
+
+.landing-feature strong {
+  display: block;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.landing-feature p {
+  margin-top: 3px;
+  color: #334155;
+  font-size: 10px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 750px) {
+
+  .landing {
+    min-height: calc(100vh - 150px);
+    padding: 50px 10px 150px;
+  }
+
+  .landing-content h1 {
+    font-size: 70px;
+    letter-spacing: -4px;
+  }
+
+  .landing-cities {
+    bottom: 105px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .landing-features {
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .landing-feature {
+    min-width: 0;
+  }
+
+  .landing-feature p {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .landing-content h1 {
+    font-size: 58px;
+  }
+
+  .landing-description {
+    font-size: 13px;
+  }
+
+  .hero-search {
+    height: 62px;
+  }
+
+  .hero-search button {
+    height: 48px;
+    padding: 0 15px;
+  }
+
+  .hero-search button span {
+    display: none;
+  }
+
+  .landing-cities {
+    max-width: 330px;
+  }
+
+  .landing-features {
+    display: none;
+  }
+}
+.landing {
+  min-height: calc(100vh - 115px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 40px;
+  overflow: hidden;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.landing-content {
+  position: relative;
+  z-index: 3;
+  width: min(700px, 100%);
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.055);
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  margin-bottom: 24px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+.landing-content h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(52px, 6vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.landing-content h1 span {
+  color: #64748b;
+}
+
+.landing-description {
+  width: min(500px, 100%);
+  margin: 28px auto 35px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   HERO SEARCH
+========================================= */
+
+.hero-search {
+  width: min(600px, 100%);
+  height: 68px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.hero-search-icon {
+  color: #64748b;
+  font-size: 25px;
+  margin-left: 18px;
+}
+
+.hero-search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #f8fafc;
+
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.hero-search input::placeholder {
+  color: #64748b;
+}
+
+.hero-search button {
+  height: 54px;
+  padding: 0 23px;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: white;
+  background: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-search button:hover {
+  background: #3b82f6;
+  transform: translateX(2px);
+}
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location-option {
+  margin-top: 17px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.location-option span {
+  color: #60a5fa;
+  margin-right: 6px;
+}
+
+/* =========================================
+   POPULAR CITIES
+========================================= */
+
+.landing-cities {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 28px;
+
+  z-index: 3;
+}
+
+.landing-cities > span {
+  color: #334155;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-right: 5px;
+}
+
+.landing-cities button {
+  padding: 8px 13px;
+
+  border-radius: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.025);
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.landing-cities button:hover {
+  color: #cbd5e1;
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.18);
+}
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.landing-features {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 80px;
+
+  margin-top: 55px;
+
+  z-index: 3;
+}
+
+.landing-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  min-width: 145px;
+}
+
+.landing-feature > span {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 700;
+  padding-top: 3px;
+}
+
+.landing-feature strong {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.landing-feature p {
+  margin-top: 3px;
+
+  color: #334155;
+
+  font-size: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   WEATHER CONTENT
+================================ */
+
+.weather-content {
+  margin-top: 65px;
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero-weather {
+  position: relative;
+  padding: 25px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 41, 59, 0.72),
+      rgba(15, 23, 42, 0.6)
+    );
+  backdrop-filter: blur(25px);
+  overflow: hidden;
+}
+
+.hero-weather::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: -100px;
+  top: -150px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.13);
+  filter: blur(80px);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.location-pin {
+  width: 10px;
+  height: 10px;
+  display: block;
+  color: #60a5fa;
+  font-size: 10px;
+  text-shadow: 0 0 15px #60a5fa;
+}
+
+.location h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.location p {
+  color: #64748b;
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+/* ================================
+   MAIN TEMPERATURE
+================================ */
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 45px;
+  position: relative;
+  z-index: 2;
+}
+
+.weather-icon {
+  font-size: 70px;
+  line-height: 1;
+  filter: drop-shadow(
+    0 15px 30px rgba(255, 255, 255, 0.08)
+  );
+}
+
+.temperature {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(60px, 7vw, 145px);
+  line-height: 0.8;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.temperature sup {
+  font-size: 35px;
+  vertical-align: top;
+  margin-left: 7px;
+  color: #64748b;
+  letter-spacing: 0;
+}
+
+.condition {
+  margin-top: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.condition span {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.condition p {
+  color: #64748b;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* ================================
+   DETAILS
+================================ */
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.detail-card {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(20px);
+  transition:
+    transform 0.2s ease,
+    border 0.2s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+.detail-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.detail-icon {
+  font-size: 17px;
+}
+
+.detail-card strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.detail-card strong small {
+  font-size: 14px;
+  color: #64748b;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0;
+}
+
+.detail-card p {
+  margin-top: 8px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.progress {
+  height: 5px;
+  margin-top: 17px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #38bdf8
+  );
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 5px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 750px) {
+  .weather-dashboard {
+    width: min(100% - 24px, 600px);
+    padding-top: 20px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+
+  .weather-content {
+    margin-top: 35px;
+  }
+
+  .hero-weather {
+    padding: 35px 25px;
+    border-radius: 22px;
+  }
+
+  .weather-main {
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .weather-icon {
+    font-size: 65px;
+  }
+
+  .temperature {
+    font-size: 85px;
+    letter-spacing: -6px;
+  }
+
+  .temperature sup {
+    font-size: 25px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome h1 {
+    letter-spacing: -3px;
+  }
+}
+
+@media (max-width: 450px) {
+  .search-button {
+    padding: 0 13px;
+  }
+
+  .weather-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .temperature {
+    font-size: 75px;
+  }
+
+  .dashboard-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+
+/* FIX: landing elements overlap */
+.landing-cities {
+  position: static !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+
+  margin-top: 28px;
+}
+
+.landing-features {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  margin-top: 55px;
+}
